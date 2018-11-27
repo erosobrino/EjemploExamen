@@ -118,11 +118,13 @@
             // rbYa
             // 
             this.rbYa.AutoSize = true;
+            this.rbYa.Checked = true;
             this.rbYa.Location = new System.Drawing.Point(6, 34);
             this.rbYa.Name = "rbYa";
             this.rbYa.Size = new System.Drawing.Size(46, 21);
             this.rbYa.TabIndex = 6;
             this.rbYa.TabStop = true;
+            this.rbYa.Tag = "0";
             this.rbYa.Text = "Ya";
             this.rbYa.UseVisualStyleBackColor = true;
             this.rbYa.CheckedChanged += new System.EventHandler(this.CheckedChangedUrgencia);
@@ -134,7 +136,7 @@
             this.rbHoy.Name = "rbHoy";
             this.rbHoy.Size = new System.Drawing.Size(54, 21);
             this.rbHoy.TabIndex = 7;
-            this.rbHoy.TabStop = true;
+            this.rbHoy.Tag = "1";
             this.rbHoy.Text = "Hoy";
             this.rbHoy.UseVisualStyleBackColor = true;
             this.rbHoy.CheckedChanged += new System.EventHandler(this.CheckedChangedUrgencia);
@@ -146,7 +148,7 @@
             this.rbMañana.Name = "rbMañana";
             this.rbMañana.Size = new System.Drawing.Size(80, 21);
             this.rbMañana.TabIndex = 8;
-            this.rbMañana.TabStop = true;
+            this.rbMañana.Tag = "2";
             this.rbMañana.Text = "Mañana";
             this.rbMañana.UseVisualStyleBackColor = true;
             this.rbMañana.CheckedChanged += new System.EventHandler(this.CheckedChangedUrgencia);
@@ -178,6 +180,7 @@
             // rbPublica
             // 
             this.rbPublica.AutoSize = true;
+            this.rbPublica.Checked = true;
             this.rbPublica.Location = new System.Drawing.Point(6, 34);
             this.rbPublica.Name = "rbPublica";
             this.rbPublica.Size = new System.Drawing.Size(75, 21);
@@ -194,7 +197,6 @@
             this.rbPersonal.Name = "rbPersonal";
             this.rbPersonal.Size = new System.Drawing.Size(85, 21);
             this.rbPersonal.TabIndex = 8;
-            this.rbPersonal.TabStop = true;
             this.rbPersonal.Text = "Personal";
             this.rbPersonal.UseVisualStyleBackColor = true;
             this.rbPersonal.CheckedChanged += new System.EventHandler(this.CheckedChangedTipo);
@@ -206,7 +208,6 @@
             this.rbEmpresa.Name = "rbEmpresa";
             this.rbEmpresa.Size = new System.Drawing.Size(85, 21);
             this.rbEmpresa.TabIndex = 7;
-            this.rbEmpresa.TabStop = true;
             this.rbEmpresa.Text = "Empresa";
             this.rbEmpresa.UseVisualStyleBackColor = true;
             this.rbEmpresa.CheckedChanged += new System.EventHandler(this.CheckedChangedTipo);

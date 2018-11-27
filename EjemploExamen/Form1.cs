@@ -14,13 +14,13 @@ namespace EjemploExamen
     {
         public enum urgencia
         {
-            Ya,
-            Hoy,
-            Mañana
+            Ya=0,
+            Hoy=1,
+            Mañana=2
         }
         public enum tipo
         {
-            Publica,
+            Publica=0,
             Empresa,
             Personal
         }
@@ -109,12 +109,14 @@ namespace EjemploExamen
             funcionalidCompleta = formPin.chkCompleta.Checked;
             gbTipo.Visible = funcionalidCompleta;
             gbUrgencia.Visible = funcionalidCompleta;
-            rbYa.Text = "&" + urgencia.Ya;
-            rbHoy.Text = "&" + urgencia.Hoy;
-            rbMañana.Text = "&" + urgencia.Mañana;
-            rbPersonal.Text = "&" + tipo.Personal;
-            rbPublica.Text = "&" + tipo.Publica;
-            rbEmpresa.Text = "&" + tipo.Empresa;
+            for (int i = 0; i < gbTipo.Controls.Count; i++)
+            {
+                gbTipo.Controls[i].Text = "&" + (tipo)i;
+            }
+            for (int i = 0; i < gbUrgencia.Controls.Count; i++)
+            {
+                gbUrgencia.Controls[i].Text = "&" + (urgencia)Convert.ToInt32(gbUrgencia.Controls[i].Tag);
+            }
         }
 
         private void MouseEnter(object sender, EventArgs e)
@@ -187,11 +189,11 @@ namespace EjemploExamen
 
         private void CheckedChangedUrgencia(object sender, EventArgs e)
         {
-            urgenciaSeleccionada = (urgencia)Enum.Parse(typeof(urgencia), ((RadioButton)sender).Text);
+            urgenciaSeleccionada = (urgencia)Enum.Parse(typeof(urgencia), ((RadioButton)sender).Text.Substring(1));
         }
         private void CheckedChangedTipo(object sender, EventArgs e)
         {
-            urgenciaSeleccionada = (urgencia)Enum.Parse(typeof(urgencia), ((RadioButton)sender).Text);
+            tipoSeleccionado = (tipo)Enum.Parse(typeof(tipo), ((RadioButton)sender).Text.Substring(1));
         }
 
         private void btnVisualizar_Click(object sender, EventArgs e)
