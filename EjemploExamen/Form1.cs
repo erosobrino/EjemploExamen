@@ -14,13 +14,13 @@ namespace EjemploExamen
     {
         public enum urgencia
         {
-            Ya=0,
-            Hoy=1,
-            Mañana=2
+            Ya = 0,
+            Hoy = 1,
+            Mañana = 2
         }
         public enum tipo
         {
-            Publica=0,
+            Publica = 0,
             Empresa,
             Personal
         }
@@ -41,6 +41,7 @@ namespace EjemploExamen
         public tipo tipoSeleccionado;
         public urgencia urgenciaSeleccionada;
         public int idBorrar = -1;
+        public bool cerrar = false;
         public Form1()
         {
             InitializeComponent();
@@ -53,6 +54,7 @@ namespace EjemploExamen
             int cont = 0;
             while (cont <= 3 && !acertada)
             {
+                cerrar = true;
                 if (cont == 3)
                 {
                     this.Close();
@@ -137,9 +139,16 @@ namespace EjemploExamen
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Seguro que desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (cerrar)
             {
-                e.Cancel = true;
+                e.Cancel = false;
+            }
+            else
+            {
+                if (MessageBox.Show("Seguro que desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
         }
 
